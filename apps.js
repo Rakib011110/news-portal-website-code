@@ -17,7 +17,7 @@ function displayCategory(category) {
     }
 };
 
-// news section in javaScript
+// news section in 
 const news = (id) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     fetch(url)
