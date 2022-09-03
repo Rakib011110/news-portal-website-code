@@ -15,6 +15,8 @@ function displayCategory(category) {
         `
         categoryContainer.appendChild(categoryLi)
     }
+
+    // spnner start
     togglePinner(true)
 
 };
@@ -94,6 +96,7 @@ const displayNews = (newsData) => {
 
 
     }
+    // spinner stop
 
     togglePinner(false)
 
