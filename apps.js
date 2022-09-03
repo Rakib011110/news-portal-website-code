@@ -35,6 +35,23 @@ const news = (id) => {
 };
 
 const displayNews = (newsData) => {
+
+    const itemFound = document.getElementById("item-number"); //
+    itemFound.innerHTML = `${newsData.length} Items Found On this Category`; //
+
+    const noNewsFound = document.getElementById("no-news-found");
+    if (newsData.length === 0) {
+        noNewsFound.classList.remove('d-none');
+    } else {
+        noNewsFound.classList.add('d-none');
+    };
+
+
+    const sortArr = newsData.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+
+
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
     for (const newsCategory of newsData) {
