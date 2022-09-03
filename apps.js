@@ -15,6 +15,8 @@ function displayCategory(category) {
         `
         categoryContainer.appendChild(categoryLi)
     }
+    togglePinner(true)
+
 };
 
 // news section in 
@@ -23,6 +25,7 @@ const news = (id) => {
     fetch(url)
         .then(response => response.json())
         .then(news => displayNews(news.data))
+
 };
 
 const displayNews = (newsData) => {
@@ -89,7 +92,13 @@ const displayNews = (newsData) => {
         `
         newsContainer.appendChild(div)
 
+
     }
+
+    togglePinner(false)
+
+
+
 }
 
 const modalDetalis = (id) => {
@@ -131,7 +140,39 @@ const modalDetalisAdded = details => {
         </div>
     </div>
     `
+
+
+
+
 }
+
+
+
+//    loader 
+
+const togglePinner = isLoading => {
+    const loderSection = document.getElementById('btn-spin')
+
+    if (isLoading) {
+        loderSection.classList.remove('d-none')
+    }
+    else {
+        loderSection.classList.add('d-none')
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // news('01')
