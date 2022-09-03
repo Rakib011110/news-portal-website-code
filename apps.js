@@ -51,7 +51,7 @@ const displayNews = (newsData) => {
             <div class="card-body me-2">
                 <div class="overflow-hidden mt-3 mb-2" style="height: 240px;">
                     <h5 class="card-title fs-3">${newsCategory.title}</h5>
-                    <p class="card-text " style="height: 150px;">${newsCategory.details}
+                    <p class="card-text " style="height: 150px;">${newsCategory.details.length > 400 ? newsCategory.details.slice(0, 400) + '...' : newsCategory.details}
                     </p>
                 </div>
 
