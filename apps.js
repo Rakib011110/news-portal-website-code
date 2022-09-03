@@ -11,7 +11,7 @@ function displayCategory(category) {
         const categoryContainer = document.getElementById('category')
         const categoryLi = document.createElement('li');
         categoryLi.innerHTML = `
-            <a id="menuButton" onclick="news('${newsCategory.category_id}')" class="text-decoration-none btn menuButton" href="#">${newsCategory.category_name}</a>
+            <a id="menuButton" onclick="news('${newsCategory.category_id}')" class="text-decoration-none  fs-6 rounded-4 btn menuButton" href="#">${newsCategory.category_name}</a>
         `
         categoryContainer.appendChild(categoryLi)
     }
@@ -36,8 +36,8 @@ const news = (id) => {
 
 const displayNews = (newsData) => {
 
-    const itemFound = document.getElementById("item-number"); //
-    itemFound.innerHTML = `${newsData.length} Items Found On this Category`; //
+    const itemFound = document.getElementById("item-number");
+    itemFound.innerHTML = `${newsData.length} Items Found On this Category`;
 
     const noNewsFound = document.getElementById("no-news-found");
     if (newsData.length === 0) {
@@ -45,6 +45,7 @@ const displayNews = (newsData) => {
     } else {
         noNewsFound.classList.add('d-none');
     };
+
 
 
     const sortArr = newsData.sort((a, b) => {
