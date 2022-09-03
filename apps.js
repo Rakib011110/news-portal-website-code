@@ -144,9 +144,6 @@ const modalDetalisAdded = details => {
     </div>
     `
 
-
-
-
 }
 
 
