@@ -85,7 +85,7 @@ const displayNews = (newsData) => {
                     </svg>
                 </p>
                 </div>
-                    <button onclick="modalDetalis('${newsCategory._id}')" class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#newsModal">Read More</button>
+                    <button onclick="modalDetalis('${newsCategory._id}')" class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#newsModal"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
