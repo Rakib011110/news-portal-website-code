@@ -16,10 +16,12 @@ function displayCategory(category) {
         categoryContainer.appendChild(categoryLi)
     }
 
-    // spnner start
-    togglePinner(true)
+
 
 };
+
+
+
 
 // news section in 
 const news = (id) => {
@@ -27,6 +29,8 @@ const news = (id) => {
     fetch(url)
         .then(response => response.json())
         .then(news => displayNews(news.data))
+    // spnner start
+    loadSpinner(true)
 
 };
 
@@ -89,9 +93,8 @@ const displayNews = (newsData) => {
 
 
     }
-    // spinner stop
-
-    togglePinner(false)
+    //Stop spinner
+    loadSpinner(false);
 
 
 
@@ -141,18 +144,16 @@ const modalDetalisAdded = details => {
 
 
 
-//    loader 
 
-const togglePinner = isLoading => {
-    const loderSection = document.getElementById('btn-spin')
-
+const loadSpinner = (isLoading) => {
+    const spinner = document.getElementById("btn-spin");
     if (isLoading) {
-        loderSection.classList.remove('d-none')
+        spinner.classList.remove('d-none')
     }
     else {
-        loderSection.classList.add('d-none')
+        spinner.classList.add('d-none');
     }
-}
+};
 
 
 
@@ -165,8 +166,5 @@ const togglePinner = isLoading => {
 
 
 
-
-
-
-// news('01')
+news('01')
 
