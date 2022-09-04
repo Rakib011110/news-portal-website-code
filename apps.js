@@ -75,15 +75,24 @@ const displayNews = (newsData) => {
 
                 <div class="d-flex justify-content-between align-items-center" style="height: 80px;">
             <div class="d-flex">
-                <img class="img-fluid rounded-circle" style="height: 50px;" src="${newsCategory.author.img}" alt="">
+                <img class="img-fluid rounded-circle" style="height: 50px;" src="${newsCategory.author.img
+                ? newsCategory.author.img
+                : "No Image Found"
+            }" alt="">
                 <div class="ms-3">
-                    <p class="m-0 fw-semibold">${newsCategory.author.name}</p>
-                    <p class="m-0 fw-semibold text-color">${newsCategory.author.published_date}</p>
+                    <p class="m-0 fw-semibold">${newsCategory.author.name
+                ? newsCategory.author.name
+                : "No Name Found"
+            }</p>
+                    <p class="m-0 fw-semibold text-color">${newsCategory.author.published_date
+                ? newsCategory.author.published_date
+                : "No Date Found"
+            }</p>
                 </div>
             </div>
             <p class="d-flex align-items-center"> 
             <span> <i class="fa-regular fa-eye"> </i></span> 
-                  <span class="fw-semibold"> ${newsCategory.total_view} k</span>
+                  <span class="fw-semibold"> ${newsCategory.total_view ? newsCategory.total_view : "No View"} k</span>
             </p>
             <div class="d-none d-lg-block">
            <div>
